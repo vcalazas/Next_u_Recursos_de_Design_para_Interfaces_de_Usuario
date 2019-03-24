@@ -9,13 +9,18 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="home_fragment_text_1">Bienvenido a la aplicación Formas Geométricas, haga clic en el menú de la izquierda para seleccionar el diseño y el menú a la derecha para Compartir y configurar.</string>
-    <string name="compartilhar">Cuota</string>
+    <string name="compartilhar">Compartir</string>
     <string name="action_settings">Ajustes</string>
     <string name="cancelar">Cancelar</string>
-    <string name="text2">Selecione onde deseja, compartilhar este aplicativo</string>
-    <string name="text3">Deseja compartilhar esse aplicativo através da mídia selecionada?</string>
-    <string name="sim">Sim</string>
-    <string name="nao">Não</string>
-    <string name="text4">Compartilhado com: %1$s</string>
+    <string name="text2">Seleccione dónde desea, compartir esta aplicación</string>
+    <string name="text3">¿Desea compartir esta aplicación a través del medio seleccionado?</string>
+    <string name="sim">Sí</string>
+    <string name="nao">No</string>
+    <string name="text4">Compartido con:\n %1$s</string>
+    <string name="circulo">Círculo</string>
+    <string name="oval">Oval</string>
+    <string name="quadrado">Plaza</string>
+    <string name="retangulo">Rectángulo</string>
+    <string name="text5">Toque la pantalla para dibujar un %1$s</string>
 
 </resources>

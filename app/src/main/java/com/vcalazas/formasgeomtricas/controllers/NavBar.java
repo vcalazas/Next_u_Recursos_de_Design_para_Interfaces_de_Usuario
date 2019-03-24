@@ -3,6 +3,7 @@ package com.vcalazas.formasgeomtricas.controllers;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -11,8 +12,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.vcalazas.formasgeomtricas.R;
+import com.vcalazas.formasgeomtricas.activities.Settings;
 import com.vcalazas.formasgeomtricas.utils.Constants;
 
 public class NavBar implements NavigationView.OnNavigationItemSelectedListener {
@@ -70,7 +73,7 @@ public class NavBar implements NavigationView.OnNavigationItemSelectedListener {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            activity.startActivity(new Intent(activity, Settings.class));
         } else if (id == R.id.action_share){
             listaCheck(activity, view).show();
         }
@@ -96,12 +99,11 @@ public class NavBar implements NavigationView.OnNavigationItemSelectedListener {
                 String selection = "";
                 for (int i=0; i<checkedItem.length; i++){
                     if (checkedItem[i]) {
-                        selection += items[i]+",";
+                        selection += items[i]+";\n";
                     }
                 }
                 dialog.dismiss();
                 confirm(activity, view, selection).show();
-//                Snackbar.make(view, "Seleção: "+selection, Snackbar.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
@@ -125,7 +127,7 @@ public class NavBar implements NavigationView.OnNavigationItemSelectedListener {
         builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Snackbar.make(view, activity.getString(R.string.text4, selection), Snackbar.LENGTH_LONG).show();
+                Toast.makeText(activity, activity.getString(R.string.text4, selection), Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton(R.string.nao, new DialogInterface.OnClickListener() {

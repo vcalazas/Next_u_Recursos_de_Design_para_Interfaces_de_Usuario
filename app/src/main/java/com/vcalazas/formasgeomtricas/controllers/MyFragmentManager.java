@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.transitionseverywhere.Rotate;
 import com.transitionseverywhere.TransitionManager;
@@ -102,9 +103,12 @@ public class MyFragmentManager {
             formsFragment.setListener(MyFragmentManager.this.onListener);
             if( arguments != null ){
                 formsFragment.setArguments(arguments);
-            }
-            MyFragmentManager.this.navigationFragment(frameLayout , formsFragment, context.getString(R.string.app_name));
-            TransitionManager.beginDelayedTransition(mainActMainLayout, new Rotate());
+                MyFragmentManager.this.navigationFragment(frameLayout , formsFragment, Constants.NameOfForms.getName(context, arguments.getInt(Constants.NameOfForms.BUNDLE_FORMS)));
+                Toast.makeText(appCompatActivity, appCompatActivity.getString(R.string.text5,
+                        Constants.NameOfForms.getName(context, arguments.getInt(Constants.NameOfForms.BUNDLE_FORMS)) ), Toast.LENGTH_SHORT).show();
+            } else {
+                MyFragmentManager.this.navigationFragment(frameLayout , formsFragment, context.getString(R.string.app_name));
+            }TransitionManager.beginDelayedTransition(mainActMainLayout, new Rotate());
         } catch (Exception e){
 
         }

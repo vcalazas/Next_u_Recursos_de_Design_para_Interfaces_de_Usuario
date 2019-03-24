@@ -6,5 +6,10 @@
     <string name="text3">Deseja compartilhar esse aplicativo através da mídia selecionada?</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
-    <string name="text4">Compartilhado com: %1$s</string>
+    <string name="text4">Compartilhado com:\n %1$s</string>
+    <string name="circulo">Circulo</string>
+    <string name="oval">Oval</string>
+    <string name="quadrado">Quadrado</string>
+    <string name="retangulo">Retangulo</string>
+    <string name="text5">Toque na tela para desenhar um %1$s</string>
 </resources>

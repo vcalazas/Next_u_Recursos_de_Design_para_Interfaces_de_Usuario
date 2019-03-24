@@ -108,7 +108,7 @@ public class FormsFragment extends Fragment implements FragmentHosted {
                     for(int i = 0; i < Tela.this.touchEventCanvas.size(); i++){
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                             canvas.drawOval(Tela.this.touchEventCanvas.get(i).x, Tela.this.touchEventCanvas.get(i).y,
-                                    ( Tela.this.touchEventCanvas.get(i).x + 100), ( Tela.this.touchEventCanvas.get(i).y + 175), paint);
+                                    ( Tela.this.touchEventCanvas.get(i).x + 175), ( Tela.this.touchEventCanvas.get(i).y + 100), paint);
                         }
                     }
                     break;
