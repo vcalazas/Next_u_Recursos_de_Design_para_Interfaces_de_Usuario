@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import com.transitionseverywhere.Rotate;
 import com.transitionseverywhere.TransitionManager;
 import com.vcalazas.formasgeomtricas.R;
+import com.vcalazas.formasgeomtricas.fragments.FormsFragment;
 import com.vcalazas.formasgeomtricas.fragments.HomeFragment;
 import com.vcalazas.formasgeomtricas.interfaces.OnListener;
 import com.vcalazas.formasgeomtricas.utils.Constants;
@@ -59,7 +60,9 @@ public class MyFragmentManager {
                     MyFragmentManager.this.goHome(frameLayout, arguments);
                     break;
 
-
+                case Constants.NameOfFragments.FORMS:
+                    MyFragmentManager.this.goForms(frameLayout, arguments);
+                    break;
             }
         } catch (Exception e){
 
@@ -87,6 +90,20 @@ public class MyFragmentManager {
                 homeFragment.setArguments(arguments);
             }
             MyFragmentManager.this.navigationFragment(frameLayout , homeFragment, context.getString(R.string.app_name));
+            TransitionManager.beginDelayedTransition(mainActMainLayout, new Rotate());
+        } catch (Exception e){
+
+        }
+    }
+
+    private void goForms(int frameLayout, Bundle arguments){
+        try {
+            FormsFragment formsFragment = new FormsFragment();
+            formsFragment.setListener(MyFragmentManager.this.onListener);
+            if( arguments != null ){
+                formsFragment.setArguments(arguments);
+            }
+            MyFragmentManager.this.navigationFragment(frameLayout , formsFragment, context.getString(R.string.app_name));
             TransitionManager.beginDelayedTransition(mainActMainLayout, new Rotate());
         } catch (Exception e){
 

@@ -49,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navBar = new NavBar(MainActivity.this, drawer);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(navBar);
-
         MainActivity.this.myFragmentManager = new MyFragmentManager(MainActivity.this, MainActivity.this,
                 ( (LinearLayout) findViewById(R.id.MainActMainLayout) ));
+
+        MainActivity.this.navBar = new NavBar(MainActivity.this, drawer, MainActivity.this.myFragmentManager, MainActivity.this);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(MainActivity.this.navBar);
+
+
 
         MainActivity.this.myFragmentManager.navigator(Constants.NameOfFragments.HOME, null);
     }
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        boolean n = navBar.onOptionsItemSelected(item);
+        boolean n = navBar.onOptionsItemSelected(item, (LinearLayout) findViewById(R.id.MainActMainLayout) );
 
         return super.onOptionsItemSelected(item);
     }

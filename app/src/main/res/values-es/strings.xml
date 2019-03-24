@@ -7,8 +7,15 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="home_fragment_text_1">Bienvenido a la aplicación Formas Geométricas, haga clic en el menú de la izquierda para seleccionar el diseño y el menú a la derecha para Compartir y configurar.</string>
+    <string name="compartilhar">Cuota</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="text2">Selecione onde deseja, compartilhar este aplicativo</string>
+    <string name="text3">Deseja compartilhar esse aplicativo através da mídia selecionada?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="text4">Compartilhado com: %1$s</string>
 
 </resources>
